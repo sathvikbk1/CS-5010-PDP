@@ -1,0 +1,126 @@
+1 Overview
+In this assignment we concentrate on features that will make this application more user-friendly. We will add support to buy and sell shares in a portfolio on any date, and examine the total money invested and the total value of the portfolio on any date. We will add support for commission fees. Lastly we will add a feature to plot the performance of a portfolio over time.
+
+2 Features to Add
+2.1 Flexible portfolios
+In the previous iteration of this project, portfolios could not be modified once created. In this assignment you must add support for portfolios that allow the following features:
+
+Purchase a specific number of shares of a specific stock on a specified date, and add them to the portfolio
+
+Sell a specific number of shares of a specific stock on a specified date from a given portfolio
+
+Determine the cost basis (i.e. the total amount of money invested in a portfolio) by a specific date. This would include all the purchases made in that portfolio till that date.
+
+Determine the value of a portfolio on a specific date (to be exact, the end of that day). The value for a portfolio before the date of its first purchase would be 0, since each stock in the portfolio now was purchased at a specific point in time.
+
+You should continue to support the earlier, inflexible portfolio as a simpler tool for "if I had this composition in my portfolio, what would its value be on certain dates?" type of queries. You should account for user errors suitably in various cases. Your program should also continue to prevent a client from buying a fractional number of shares.
+
+2.2 Commission Fees
+Some brokers charge a commission fee for each transaction through their services (purchase/sale). The commission fees are usually a fixed fee per transaction. Add support to specify and incorporate commissions fees in your program. Be sure to include them in computing the cost basis of a portfolio.
+
+2.3 Support for Web API integration
+Your program must now integrate the Alpha Vantage API, with the possibility of using other APIs and data sources in the future. You are free to design the details of how the program will switch between data sources etc. We only care that you have a plan and a design to support that plan (for additional APIs in the future).
+
+2.4 Portfolio Performance Over Time
+One of the most popular ways to analyze the success (or lack thereof) of investing is to view how the portfolio has performed over a period of time. Although it is possible to repeatedly query the value of a portfolio using the above features, seeing the performance "at a glance" offers a better way.
+
+One way to visualize this is by using a bar or line chart. Here is an example of a horizontal bar chart using text:
+
+Performance of portfolio XXX from YYY to ZZZ
+
+Jan 2010: *****
+Feb 2010: ***
+Mar 2010: ********
+Apr 2010: ******
+May 2010: *******
+Jun 2010: ********
+Aug 2010: *********
+Sep 2010: ***********
+Oct 2010: ************
+Nov 2010: **********
+Dec 2010: **************
+
+Scale: * = $1000
+Note the various elements of this chart:
+
+The title of the barchart specifies the name of the portfolio (XXX), and the time range (YYY to ZZZ).
+
+Each line starts with a timestamp. All timestamps are of the same length, so that the ':' symbols align
+
+The number of lines is decided by the timespan desired. The scale of the timestamps (i.e. each month of a year, every 3 months, every day, etc.) is decided by the timespan, so that bar chart has at least 5 lines but no more than 30 lines.
+
+The number of asterisks on each line is a measure of the value of the portfolio at that timestamp. If the timestamps are dates then the value is computed at the end of that day. If the timestamps are months then the value is computed at the last working day of that month. If the timestamp are years then the value is computed on the last working day of that year.
+
+The end of the bar chart shows the scale in terms of how many dollars are represented by each asterisk. The scale of the horizontal axis is decided by the range of values of the portfolios, so that there are no more than 50 asterisks on each line.
+
+The scale may be absolute (one asterisk is equal to $1000) or relative to a base amount (one asterisk is $2000 more than a base amount of $100000). This will allow you to plot the bar chart over small or large ranges of portfolio values. The last line of the barchart should clearly mention which type of scale it is.
+
+Your program must support drawing (as text on the screen) a bar chart according to the above specifications, for a specific portfolio and a specified time range.
+
+2.5 Text-based view
+The text-based view should still work, and should incorporate all the features from this assignment as well.
+
+3 Design
+We expect your design to follow the MVC architecture. Adding feature logic code in the view will cost you points! A good implementation of MVC allows us to substitute one part with minimal changes to the others.
+
+Your model and controller should have had an interface: if it did not, please add it to your design now. Your program should now have a formal view, with an interface and an implementation. This way, the controller communicates with the model and the view in a principled way.
+
+You are allowed to enhance or change your existing design. However we expect you to follow the SOLID principles as much as you can. When you do need to edit/enhance your design, you should document and justify the changes, both in the code and the DESIGN-README file. You will be graded on the number and extent of design changes.
+
+Do not compromise on your design in a quest to make a snazzy, feature-rich, polished program! A polished product may not get you any extra credit, but a poorly designed program will cost you!
+
+4 Testing
+We expect you to test all parts of your program, just as thoroughly as other assignments. We expect you to come up with appropriate testing strategies to do this (we are purposefully not giving you specific testing examples and the expected results).
+
+5 Usage of third party libraries
+You are allowed to use external libraries for this project. However please be aware of the following rules and stipulations:
+
+You must make sure that you are legally allowed to use it for academic/classroom purposes. As proof that you have, please include a link to the terms of usage of whichever library you are using, that mentions that this is allowed.
+
+Your SETUP-README.txt must include information about all the dependencies that we need to know to run your program. If allowed by the terms of usage, you may include the dependencies in your jar file. However you must include detailed instructions for how to set it up in IntelliJ, in case we need to run your program that way. You should not assume that we know how to setup any of them.
+
+Your SETUP-README.txt file must also include a list of all libraries that your program is using.
+
+Remember that the file size limit for a submission is still 8 MB. This may be a factor in your decision to use (and/or include in your jar) a certain library. We will not change this limit, just as a user cannot always afford more memory for your application to run on their computers!
+
+Please be aware that you will lose points if we encounter problems due to third party libraries while running your program during grading.
+
+6 Deliverables
+Please pay close attention to this list, and submit everything in it. Each item will be used in grading, and is therefore worth points. We will not honor requests to add items to submissions after the deadline has passed, or consider forgotten items sent later during grading.
+
+Please submit the following files:
+
+All your source code (*.java). You do not need to submit the provided demo file.
+
+All your tests.
+
+An updated class diagram summarizing your design in the res folder.
+
+A screen capture of a bar chart (as preliminary evidence that your program can produce one).
+
+A text description (README.txt or README.html) listing which features of your program work and are complete. Please do not simply say "all features work".
+
+A text description (DESIGN-README.txt) of your design in the res folder. This file should list (at the top) all the design changes you have made in this assignment, along with a short justification of each change.
+
+A runnable JAR file in the res folder.
+
+Any supporting files that would be required to run your JAR file.
+
+A text description (SETUP-README.txt) in the res folder of how exactly to run your program from the JAR file. If you require the jar file to be in a specific folder, or require other files with it, please include these directions here. You should also include detailed instructions on how to run your program to create a portfolio, purchase stocks of at least 3 different companies in that portfolio at different dates and then query the value and cost basis of that portfolio on two specific dates. We will run your program with this data to begin grading. You should also include a list of stocks that your program supports, along with dates on which its value can be determined (if there are restrictions in your program about which data is available).
+
+7 Grading criteria
+Completeness of your submission
+
+Design of classes, interfaces and methods
+
+Your justification for your design
+
+Additional documents that you are required to submit
+
+The quality of your code
+
+Quality and coverage of tests
+
+Quality of documentation
+
+Code style

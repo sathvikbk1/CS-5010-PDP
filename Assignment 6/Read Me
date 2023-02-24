@@ -1,0 +1,139 @@
+1 Overview
+In this assignment we concentrate on features that will make this application more user-friendly. We will add support to create convenient strategies to invest in a portfolio. We will also add a graphical user interface to our program.
+
+2 Features to Add
+2.1 A more realistic way to invest
+Many people look to the stock market for investing because of the promise of big gains. But how does one maximize gain? The idea is simple: buy at a low price, and sell at a high price. The main challenge is to identify when a stock is at a "low" price (to buy), and when it has reached its "peak" (to sell).
+
+A traditional investment strategy is to find out information about companies before investing in them. Such an investor would pore through financial statements of a company of interest, looking for debt, revenue, profits, etc. before deciding whether investing in the company is a good idea (this is often why stock prices decline after a disappointing investor report. Facebook and Apple experienced this in 2018, when investors perceived, somewhat prematurely, that bad publicity for Facebook and reduced sales targets for iPhones in China were signs of bad things to come).
+
+Another investment strategy is "value-based". This strategy calls for measuring (qualitatively and quantitatively) the value of a stock (i.e. is buying it a "good deal"?). Value investors also pore through financial statements and financial news, looking for signs of a value buy, or a profitable sell. Some investors scrounge for "bad short-term" news on otherwise well-established companies, hoping that the news will temporarily drop stock prices making it a good deal (e.g. buying stock of British Petroleum right after the Deepwater Horizon oil spill in 2010 would have been a good idea, because the price had temporarily dropped on what is otherwise a stable company). Such strategies often micro-manage, trying to find individual companies to invest. All of them are active styles of investing.
+
+Although active investing has the potential to reap big benefits, it requires a constant time commitment and a certain financial acumen. Most investors lack the required dedication and time, due to which their strategy eventually fizzles out.
+
+A more automated strategy is to create a portfolio of stocks, and invest money proportionally into stocks in that portfolio. An investor following this strategy may occasionally change the makeup of the portfolio, but spends far less time monitoring the market. This is an example of passive style of investing. While this is a simpler strategy it has the potential of missing stock market fluctuations that could produce more dramatic gains.
+
+2.1.1. Dollar-cost averaging
+A popular long-term passive investment strategy is called dollar-cost averaging. In this strategy, an investor creates a portfolio of stocks and determines their relative proportion (e.g. 60% stocks, 40% bonds, with the stocks equally divided into technology, financial, utility, real estate, consumer staple and consumer discretionary companies and the bonds equally divided into federal, state and municipal bonds). Then the investor invests a fixed amount of money in this portfolio at regular frequency (e.g. invest $1000 at the beginning of each month) over a long period of time, paying no attention to what the stock market is doing on the days of the stock purchases. This may be termed as the investment-equivalent of putting a fixed amount of money in a savings account each month.
+
+The benefit of this strategy is that it is extremely simple: the investor does not have to spend time and effort tweaking a portfolio, or monitoring the stock market. This strategy is based on the well-founded hypothesis that although the stock prices fluctuate every day, the long-term trend of a well-chosen portfolio is upward. The fixed-frequency investing effectively "averages" the unpredictable short-term gains and losses of the portfolio. While this strategy fails to capitalize on the market ups and downs, it has the potential to produce a more stable gain, when the strategy is followed without hesitation over a long period of time. This strategy is very popular: for example, most people manage their retirement accounts this way.
+
+In this assignment, we will enhance our stock application to support such higher-level strategies of investment with commission fees, to complement the low-level "buy X number of shares of Y stock on a specific date" transactions that it already supports. Specifically you must add the following features in your program:
+
+Invest a fixed amount into an existing portfolio containing multiple stocks, using a specified weight for each stock in the portfolio. For example, the user can create a FANG portfolio (Facebook, Apple, Netflix, Google) and then specify to invest $2000 in the portfolio on a specific date, such that 40% goes towards Facebook, 20% towards Apple, 30% towards Netflix and 10% towards Google). In contrast with preventing clients from buying fractional shares explicitly, a fixed amount strategy does allow purchases of fractional shares depending on the amount specified.
+
+Your program should offer creating "start-to-finish" dollar-cost averaging as a single operation. For example, "create a portfolio of 10 specified stocks, and invest $2000 in the portfolio every 30 days starting on Jan 1 2012 until Dec 31 2015 using the same, specified weights for each transaction". Note that this is one specific example: the user may use a different amount, different frequency and time range. The strategy may be ongoing, i.e. the user may not specify an end date .
+
+Periodic investment strategies may call for executing a transaction on a holiday. In this case, your program must choose the next available day to invest. Since periodic, long-term investment strategies pay little attention to the time of day, your program should buy all stocks using the end-of-day prices.
+
+Although you will support only dollar-cost averaging in this assignment, your design must support adding other such high-level, time-based long-term investment strategies in the future.
+
+2.2 Graphical User Interface
+Add a new view to your application, that uses a graphical user interface. You must design this so that your application can work with either the text-based view that you currently have, or the new graphical user interface (both views must co-exist).
+
+Start by thinking about the similarities and differences between your views, and observing which operations you need. Although different views look and behave differently, there are some common aspects to all views. A common design technique is to have a view interface that has all functionalities and then individual views suppress or provide defaults for functionalities they do not implement. Another relevant design rule is from the SOLID principles: Interface Segregation (No client should be forced to depend on methods that it does not use). Think about these aspects as you come up with a design for your views.
+
+Interaction, or "back-and-forth between the user and the program" makes the role of a controller more well-defined and non-trivial than it may have seemed in the previous assignments. Like views and models, controllers are best described as an interface whose purpose is to mediate the interactions between the view and the model. Multiple implementations of controllers are possible — potentially a specialized one for every model/view pairing. However it is also possible to implement a single controller that works for all your views: it depends on your design.
+
+Your graphical user interface should offer the following functionality:
+
+The ability to create a new flexible portfolio
+
+The ability to buy/sell stocks by specifying the number of shares , and date (with or without commission fees)
+
+The ability to query the cost basis and value of a flexible portfolio at a certain date
+
+The ability to save and retrieve flexible portfolios from files
+
+The ability to invest a specific amount in an existing flexible portfolio on a specific date by specifying the weights of how that money should be invested in each stock inside that portfolio.
+
+The ability to create a portfolio using dollar-cost averaging as specified above, and query cost basis and value of such a portfolio at a specific date.
+
+You are free to design the interaction in any way you wish. However your application must meet the following standards:
+
+Your GUI should not look and feel like a graphical equivalent of your text-based interface. For example, a sequence of pop-ups that correspond to the sequence of inputs in your text-based interface is not acceptable.
+
+The application must provide visual cues about what input is expected (e.g. a hard-to-guess sequence of keystrokes to do something is not acceptable).
+
+The application must provide visual cues about the effect that a user’s input has had. The user shouldn't have to wait to give more inputs to know that the program accepted the previous inputs.
+
+The appearance of your user interface should be reasonable. Oddly sized buttons or textboxes, text boxes with no information about what the user is expected to type, a haphazard organization of elements on the screen, etc. is not acceptable. In other words, you should aim higher than a "functional UI".
+
+The interactions must be reasonably user-friendly and intuitive. We do not expect snazzy, highly user-friendly programs. Our standard is: can a user unfamiliar with your code and technical documentation operate the program correctly without reading your code and technical documentation?
+
+Choose GUI elements carefully to minimize user errors whenever you can. You are not expected to create custom widgets for greater usability, but anything within Java Swing is allowed. The provided code example shows some Swing features that you are free to use.
+
+2.3 Text-based view
+The text-based view should still work, although the new features from this assignment need not be supported in it.
+
+3 Design
+We expect your design to follow the MVC architecture. Adding feature logic code in the view will cost you points! A good implementation of MVC allows us to substitute one part with minimal changes to the others.
+
+Your model and controller should have had an interface: if it did not, please add it to your design now. Your program should now have a formal view, with an interface and an implementation. This way, the controller communicates with the model and the view in a principled way.
+
+You are allowed to enhance or change your existing design. However we expect you to follow the SOLID principles as much as you can. When you do need to edit/enhance your design, you should document and justify the changes, both in the code and the DESIGN-README file. You will be graded on the number and extent of design changes.
+
+Do not compromise on your design in a quest to make a snazzy, feature-rich, polished program! A polished product may not get you any extra credit, but a poorly designed program will cost you!
+
+4 Testing
+We expect you to test all parts of your program, just as thoroughly as other assignments. We expect you to come up with appropriate testing strategies to do this (we are purposefully not giving you specific testing examples and the expected results). Testing the GUI is optional.
+
+5 Usage of third party libraries
+You are allowed to use external libraries for this project (you must use Swing for the GUI). However please be aware of the following rules and stipulations:
+
+You must make sure that you are legally allowed to use it for academic/classroom purposes. As proof that you have, please include a link to the terms of usage of whichever library you are using, that mentions that this is allowed.}
+
+Your SETUP-README.txt must include information about all the dependencies that we need to know to run your program. If allowed by the terms of usage, you may include the dependencies in your jar file. However you must include detailed instructions for how to set it up in IntelliJ, in case we need to run your program that way. You should not assume that we know how to setup any of them.
+
+Your SETUP-README.txt file must also include a list of all libraries that your program is using.
+
+Please be aware that you will lose points if we encounter problems due to third party libraries while running your program during grading.
+
+6 Extra Credit
+Add the ability to draw a bar chart in your GUI to summarize the performance of a portfolio over a specific time frame. The bar chart does not have to be organized in the same way as the text bar chart. You may choose to implement a line chart instead (think of a line chart as a line that connects the peaks of the bars in a bar chart, without actually drawing the bars. Your chart must continue to show the labels on both axes, and a suitable title for the chart.
+
+Merely showing the text bar chart on the GUI will not earn any extra credit: you must draw the bar chart properly using actual lines and rectangles .
+
+7 Deliverables
+Please pay close attention to this list, and submit everything in it. Each item will be used in grading, and is therefore worth points. We will not honor requests to add items to submissions after the deadline has passed, or consider forgotten items sent later during grading.
+
+Please submit the following files:
+
+All your source code (*.java). You do not need to submit the provided demo file.
+
+All your tests.
+
+An updated class diagram summarizing your design in the res folder.
+
+A screen capture of the GUI (as preliminary evidence that your program does have a GUI).
+
+Only if you attempted the extra credit: A screen capture showing the bar/line chart.
+
+A text description (README.txt or README.html) listing which features of your program work and are complete. Please do not simply say "all features work".
+
+A text description (DESIGN-README.txt) of your design in the res folder. This file should list all the design changes you have made in this assignment, along with a short justification of each change.
+
+A runnable JAR file in the res folder.
+
+Any supporting files that would be required to run your JAR file.
+
+A text description (SETUP-README.txt) in the res folder of how exactly to run your program from the JAR file. If you require the jar file to be in a specific folder, or require other files with it, please include these directions here.
+
+HTML documentation of all your code (not tests) in a separate zipped file inside the res folder.
+
+7 Grading criteria
+Completeness of your submission
+
+Design of classes, interfaces and methods
+
+Your justification for your design
+
+Additional documents that you are required to submit
+
+The quality of your code
+
+Quality and coverage of tests
+
+Quality of documentation
+
+Code style

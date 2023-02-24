@@ -1,0 +1,33 @@
+﻿CODE CRITIQUE
+
+Design Critique:
+The GUI design for the given code is definitely a strength. It is easy to navigate and intuitive for the user to use. Navigation through the tabs and functionalities is quite straightforward.
+
+
+Implementation Critique:
+Some of the issues we found with the implementation include
+* One limitation is that the date of purchase is not asked for the first stock bought, but it is required for all subsequent stock purchases. This can be confusing for the user.
+* The API call is being performed for fetching the closing price of a particular stock, the ticker itself has been placed under a different folder which makes it impossible to add companies which enter the stock market at a future date, with the current implementation of the platform.
+* Additionally, the commission percentage cannot be edited for individual buy/sell transactions. This can be limiting for users who have different commission rates for different transactions.
+
+
+Documentation Critique:
+The documentation attached with the source file, namely the DESIGN-README, SET-UP README and the README are well written with description corresponding to each of the directories in the source file. The use of self-explanatory variable names(both global and local)
+did help in understanding the flow. Having said so, the generated class diagram was not very helpful in understanding the flow of control from one class to the other.
+
+
+Design/Code Strengths:
+The graphical user interface might have been the biggest strength in the code, owing to the user's ability to be able to navigate through the different features with ease and figure things out intuitively without much of a hassle. 
+
+
+Design/Code Limitations:
+Some of the limitations of the code that we found difficult to work with include
+* One of the major limitations of the given code is that it uses a file-based system to store information about the user's portfolio. This means that once the application is closed, the user cannot access or modify their portfolio without restarting the application. 
+* Additionally, the lack of documentation makes it difficult for users to understand the code and for others to contribute to it.
+
+
+Suggestions on how to address them:
+Some of the suggestions we would give include
+* To address the limitations of the code, we suggest adding the ability to edit the commission percentage for individual transactions.
+* Additionally, to improve the functionality of the code, we suggest using real time storage for the information about the user's portfolio. This would allow the user to access and modify their portfolio instantly without having to restart the application. 
+* Finally, to address the issue of the GUI not running on a Windows system, we suggest testing the code on multiple operating systems and addressing any compatibility issues.

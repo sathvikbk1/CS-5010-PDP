@@ -1,0 +1,115 @@
+1 Premise of this assignment
+This assignment gives you the experience of working with code that you did not write or design. The primary learning objective of this assignment is to understand code and design not written by you to the extent of implementing a new end-to-end feature using it. There are two secondary learning objectives. In sharing your code with another group you will attempt to communicate your ideas effectively to them, and answer questions posed by them as needed (i.e. do customer service). In addition you will be asking technically appropriate and precise questions to the group whose code you are working with. You will summarize your experience by critiquing the code given to you.
+
+This assignment will be due in two parts, to ensure that each group is sending their code to another in a timely fashion, and receiving code in time to complete this assignment.
+
+2 Preparing to send and receive code
+You will receive the contact details of two different groups from us: one group that will give you their code (your provider) and another to which you must send your code (your customer).
+
+In order to prepare your code to your customer, please do the following:
+
+Complete the questionnaire above about your code. This will summarize for your customer the status of your code (i.e. what works and what does not).
+
+Prepare a zip file containing your latest code, the SETUP-README file and the questionnaire. You do not have to send a jar file, but you must include at least one screenshot of your GUI.
+
+As soon as you receive the details of your provider group, please contact them and request that they send you their code as soon as possible. Please be patient as sometimes it takes a day or two for them to respond.
+
+As soon as you receive the details of your customer group, please send them the above zip promptly and request that they acknowledge they received it. Then submit this zip on the server as proof that you did. This submission ensures that all groups have sent code to their customers by this due date.
+
+3 Code critique
+As customers of the providers' code, you have the opportunity to praise, critique, comment upon, and suggest improvements to their code. In short, you should provide a code review of their code.
+
+In that review, consider all the self-evaluation questions you have been asked during this course, and extrapolate from them the kinds of issues to examine. For example:
+
+How flexible are the interfaces you were given?
+
+How good was the implementation?
+
+What are some specific strengths of their design and/or implementation?
+
+What are some specific limitations of their design?
+
+How convenient was it to use their code?
+
+How cleanly written and well-documented was their code?
+
+If you needed to request changes from them, what were they and why were they needed?
+
+Write a short (3-4 paragraph) review of their code. Your review should have the following sections: Design critique, implementation critique, documentation critique, design/code strengths, design/code limitations and suggestions on how to address them. If your review is not structured into sections you will lose points.
+
+Please concentrate on writing a review that is honest, but constructive. The reader should be able to understand what was wrong, and how to correct it. Please avoid simply criticizing the code given to you with no suggestions on how to make it better. Similarly avoid blanket praise: every implementation has flaws or limitations! Most importantly, please be professional in your writing. In summary, write a review that you would not mind receiving and acting upon.
+
+4 Rebalance a Portfolio
+Let us assume that an investor decided to create a portfolio of 4 stocks: Netflix, Google, Microsoft and Apple. They wanted the money invested in this portfolio equally among these four stocks. For example, if they had $1000 to invest, they would buy $250 worth of shares of each of the four companies. On the date on which this portfolio was made, the prices of these stocks were $10, $25, $10 and $50 respectively. Thus the portfolio would be made of 25 shares of Netflix, 10 shares of Google, 25 shares of Microsoft and 5 shares of Apple respectively.
+
+However as time passes, each of these stocks gain and lose value. As a result, on a certain specific date the value of each of these stocks in this portfolio may not be exactly one-fourth of the total value of the portfolio on that date. In order to stay on their goal, the investor decides to re-balance their portfolio. Rebalancing involves selling some stock of companies that are over-represented to buy stock of companies that are under-represented.
+
+For example, let us assume that on a particular date, the price per share of these four companies were $15, $30, $10 and $30 respectively. Thus the values of these stocks (price per share multiplied by number of shares) would be $375, $300, $250 and $150 respectively, bringing the total value of the portfolio to $1075. If the intended distribution of these stocks in the portfolio was supposed to be (25%, 25%, 25%, 25%), the portfolio should have $268.75 worth of each stock. Therefore, the investor will have to sell $106.25 worth of Netflix stock (7.0833 shares) and $31.25 worth of Google stock (1.0417 shares)to purchase $18.75 worth of Microsoft stock (1.875 shares) and $118.75 (3.9583 shares) of Apple stock. Alternatively, if the intended distribution of these stocks in the portfolio was supposed to be (40%, 20%, 20%, 20%), the portfolio should have $430, $215, $215 and $215 worth of Netflix, Google, Microsoft and Apple stock respectively. Therefore, the investor will have to sell $85 worth of Google stock (2.8333 shares) and $35 worth of Microsoft stock (3.5 shares) to purchase $55 worth of Netflix stock (3.6666 shares) and $65 worth of Apple stock (2.1666 shares).
+
+5 What to do
+In the code provided to you implement the feature of rebalancing an existing flexible portfolio, given a specific date and the intended weights (by value) of the stocks in that portfolio. The weights should add up to 100. The entire portfolio must be rebalanced (i.e. you cannot just rebalance using some but not all stocks within it).
+
+In the code provided to you expose the feature of rebalancing an existing flexible portfolio through the text based interface. The effects of the rebalancing should be apparent when the value or composition of the portfolio is queried afterward.
+
+In the code provided to you expose the feature of rebalancing an existing flexible portfolio through the GUI. The effects of the rebalancing should be apparent when the value or composition of the portfolio is queried afterward.
+
+Write a critique of the provided code.
+
+Write a summary in a README file. See details below.
+
+In summary, in this assignment you will only work with the code provided to you, not the code written by your group till now.
+
+5.1 README file
+The README file should have three sections:
+
+At the top, mention how to run your submission (how to run your jar file, and/or how to run the submitted code from IntelliJ).
+
+Next, mention which parts you were able to complete and not complete. If you were not able to complete something, be sure to justify why (the only legitimate reason to not complete something without losing points is to convince us that the code provided to you was unworkable for that part). We will begin grading by reading this part and setting our expectations accordingly.
+
+Finally, in point form, summarize the changes you made in the code given to you to implement rebalancing and expose it through the GUI. Each point should tell us specifically what you changed and where you changed it.
+
+6 Code issues
+In general, if the code provided to you does not successfully implement a required feature you are not responsible for fixing it. Your providers should fix it and send you an update: it is OK to ask them to do so. Conversely you are expected to fix your code if a required feature does not work.
+
+However you should not expect your providers to re-design their working code to make it "better" according to you.
+
+If for some reason you do not get repaired code or explanations from your providers and this affects your ability to complete the required feature in this assignment, be sure to mention this in your critique.
+
+Specifically, here are the guidelines for how to proceed with the given code. If in the code provided to you:
+
+If the code works including the text interface and GUI, implement portfolio rebalancing and expose through text interface and GUI (most straightforward).
+
+If the code works, the text interface works but GUI does not: implement portfolio rebalancing and expose through text interface. Ask providers to fix GUI enough for you to expose portfolio rebalancing through the GUI and show results. If you were not able to completely expose through GUI, mention in README.
+
+If code works, the text interface somewhat works and GUI does not work at all, implement portfolio rebalancing and try to expose it in text interface. Ask provider to fix GUI so you can expose portfolio rebalancing. If unable to complete, mention in README.
+
+If nothing works (no GUI, no text interface, even model is unworkable), such that you cannot even implement portfolio rebalancing: contact your professor and we will assign you another provider.
+
+7 Grading standards
+For this assignment, you will be graded on
+
+the coherence and thoroughness of your review of your providers' code.
+
+the quality and completeness of your final submission (i.e., the degree to which portfolio rebalancing works).
+
+You will not be graded (much) on the code you send to your customers. It will simply be style-checked, and worth a small portion of your overall grade for the assignment, to ensure that you submit something we can compare against your customers' use of your code.
+
+Your grade will generally not be affected by your customers' review of your code. Your grade may be affected by your responsiveness (or lack thereof) and experience with your customers.
+
+There will be two self-evals: a short one about the code you sent to your customers, and a longer one about the code you needed to write for this assignment. Make sure that you complete both. (Having two separate self-evals is necessary, so that you can tag lines in each submission correctly.)
+
+8 Submission
+Submission of this project will be divided into two parts: the code you provided others, and the code you worked on.
+
+For Assignment 7-sent-code :
+
+Submit the final version of the files you sent your customers, including the questionnaire.
+For Assignment 7 :
+
+Submit all files necessary to make your code work (this includes the code you got from your providers, with code you wrote for this assignment).
+
+Submit your review of your providers' code, as a text or markdown file.
+
+Submit the README file.
+
+Submit a JAR file (with extension .jar) file that can run the program (the code that you received plus your additions).
