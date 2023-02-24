@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="pdp">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Assignment 7/res/pdp.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
